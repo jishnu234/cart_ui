@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 
 class Counter extends ChangeNotifier {
 
-    var milkCount = 13;
-    var iceCreamCount = 4;
-    var curdCount = 13;
+    var milkCount = 100;
+    var iceCreamCount = 100;
+    var curdCount = 100;
 
     decMilk() {
       milkCount -= 1;
