@@ -11,10 +11,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var milkCount = context.watch<Counter>().milkCount;
-    var curdCount = context.watch<Counter>().curdCount;
-    var iceCount = context.watch<Counter>().iceCreamCount;
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: ChangeNotifierProvider(create: (_) => Counter(),
@@ -38,7 +34,7 @@ class MyApp extends StatelessWidget {
                 trailing: TextButton(
                   onPressed: context.watch<Counter>().milkCount >0 ? context.read<Counter>().decMilk: null,
                   child: Badge(
-                      badgeContent: Text('$milkCount'),
+                      badgeContent: Text('${context.watch<Counter>().milkCount}'),
                       child: Icon(Icons.settings)),
                 ),
               ),
@@ -47,7 +43,7 @@ class MyApp extends StatelessWidget {
                 trailing: TextButton(
                   onPressed: context.watch<Counter>().curdCount >0 ? context.read<Counter>().decCurd: null,
                   child: Badge(
-                      badgeContent: Text('$curdCount'),
+                      badgeContent: Text('${context.watch<Counter>().curdCount}'),
                       child: Icon(Icons.settings)),
                 ),
               ),
@@ -56,7 +52,7 @@ class MyApp extends StatelessWidget {
                 trailing: TextButton(
                   onPressed: context.watch<Counter>().iceCreamCount >0 ? context.read<Counter>().decIce: null,
                   child: Badge(
-                    badgeContent: Text('$iceCount'),
+                    badgeContent: Text('${context.watch<Counter>().iceCreamCount}'),
                     child: Icon(Icons.settings),
                   ),
                 ),
