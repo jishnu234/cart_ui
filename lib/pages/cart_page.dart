@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart';
-import 'package:cart_ui/widgets/item_list.dart';
-import 'package:cart_ui/cart_shelf.dart';
-import 'package:provider/provider.dart';
-import 'package:cart_ui/business_logic/logic.dart';
+import 'package:cart_ui/widgets/widget_lib.dart';
 
 class CartPage extends StatelessWidget {
   @override
