@@ -10,12 +10,15 @@ class CartPage extends StatelessWidget {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.only(right: 12.0, top: 6.0),
-                child: TextButton(
+                child: GestureDetector(
                   child: Badge(
+                    toAnimate: false,
                     badgeContent: Text(context.watch<Counter>().cartCount.toString()),
-                    child: Icon(Icons.settings, color: Colors.white,),
+                    child: Icon(Icons.add_shopping_cart_rounded,
+                     color: Colors.white,
+                    size: 30.0,),
                   ),
-                  onPressed: (){
+                  onTap: (){
                     context.read<Counter>().cartCount > 0 ? Navigator.push(context, 
                     MaterialPageRoute(builder: (context) => CartShelf())): ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Cart is Empty'),
